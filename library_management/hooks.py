@@ -247,3 +247,11 @@ app_license = "mit"
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
 
+scheduler_events = {
+    "daily": [
+        "library_management.library_management_system.schedulers.notify_new_articles",
+        "library_management.library_management_system.schedulers.update_member_active_status"
+
+    ]
+}
+
