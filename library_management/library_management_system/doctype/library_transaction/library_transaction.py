@@ -188,17 +188,39 @@ class LibraryTransaction(Document):
                 "You have unpaid penalties. Please clear them before issuing books."
             )
     
-    @frappe.whitelist()
-    def update_articles(transaction):
-        transaction = frappe.get_doc("Library Transaction", transaction)
-        if doc.status!=1 or doc.status!="Issue":
-            frappe.throw("Only submitted Issue transactions can be updated.")
-        
-        issued_count=frappe.db.get_value(
-            "Library Member",
-            doc.library_member,
-            "issued_count"
-        ) or 0
+@frappe.whitelist()
+def update_articles_button(transaction):
+    transaction = frappe.get_doc("Library Transaction", transaction)
+    if transaction.docstatus!=1 or transaction.type!="Issue":
+        frappe.throw("Only submitted Issue transactions can be updated.")
+    
+    issued_count=frappe.db.get_value(
+        "Library Member",
+        transaction.library_member,
+        "issued_count"
+    ) or 0
 
-        return issued_count==doc.count
+    return issued_count==transaction.count
+    
+@frappe.whitelist()
+def update_articles(docname,articles):
+    doc=frappe.get_doc("Library Transaction", docname)
+    issued_count=frappe.db.get_value(
+        "Library Member",
+        doc.library_member,
+        "issued_count"
+    ) or 0
+
+    if(issued_count!=doc.count):
+        frappe.throw("You cannot update articles as you have already returned some articles.")
+
+    doc.set("articles",[])
+    for article in articles:
+        doc.append("articles",{
+            "article":article
+        })
+    doc.count=len(articles)
+    doc.save(ignore_permissions=True)
+    frappe.db.commit()
+
 
