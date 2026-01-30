@@ -1,18 +1,16 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "LT.###",
- "creation": "2026-01-09 11:10:27.729189",
+ "creation": "2026-01-27 10:52:18.469852",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "library_member",
-  "type",
-  "date",
+  "penalty_type",
+  "penalty_amount",
+  "paid",
   "amended_from",
-  "article",
-  "return_date",
-  "count"
+  "transaction_reference"
  ],
  "fields": [
   {
@@ -24,56 +22,49 @@
    "reqd": 1
   },
   {
-   "fieldname": "type",
-   "fieldtype": "Select",
+   "fieldname": "penalty_type",
+   "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Type",
-   "options": "Issue\nReturn",
-   "reqd": 1
+   "label": "Penalty Type",
+   "options": "Penalty Types"
   },
   {
-   "fieldname": "date",
-   "fieldtype": "Date",
+   "fieldname": "penalty_amount",
+   "fieldtype": "Int",
    "in_list_view": 1,
-   "label": "Date",
-   "reqd": 1
+   "label": "Penalty Amount"
+  },
+  {
+   "default": "0",
+   "fieldname": "paid",
+   "fieldtype": "Check",
+   "label": "Paid"
   },
   {
    "fieldname": "amended_from",
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Library Transaction",
+   "options": "Penalty",
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
   },
   {
-   "fieldname": "return_date",
-   "fieldtype": "Date",
-   "label": "Return Date"
-  },
-  {
-   "fieldname": "article",
-   "fieldtype": "Table",
-   "label": "Articles",
-   "options": "Article selection"
-  },
-  {
-   "fieldname": "count",
-   "fieldtype": "Int",
-   "label": "Count"
+   "fieldname": "transaction_reference",
+   "fieldtype": "Link",
+   "label": "Transaction Reference",
+   "options": "Library Transaction"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-01-29 12:55:16.157087",
+ "modified": "2026-01-28 12:18:23.849907",
  "modified_by": "Administrator",
  "module": "Library Management System",
- "name": "Library Transaction",
- "naming_rule": "Expression (old style)",
+ "name": "Penalty",
  "owner": "Administrator",
  "permissions": [
   {
@@ -85,18 +76,6 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
-   "share": 1,
-   "write": 1
-  },
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "Librarian",
    "share": 1,
    "write": 1
   }

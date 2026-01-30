@@ -11,7 +11,10 @@
   "full_name",
   "email",
   "phone",
-  "active"
+  "column_break_xest",
+  "active",
+  "books_issued",
+  "issued_count"
  ],
  "fields": [
   {
@@ -50,12 +53,27 @@
    "fieldname": "active",
    "fieldtype": "Check",
    "label": "Active"
+  },
+  {
+   "fieldname": "column_break_xest",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "books_issued",
+   "fieldtype": "Check",
+   "label": "Books Issued"
+  },
+  {
+   "fieldname": "issued_count",
+   "fieldtype": "Int",
+   "label": "No. of Books in Issue"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-23 15:44:32.766524",
+ "modified": "2026-01-29 13:05:22.843900",
  "modified_by": "Administrator",
  "module": "Library Management System",
  "name": "Library Member",
