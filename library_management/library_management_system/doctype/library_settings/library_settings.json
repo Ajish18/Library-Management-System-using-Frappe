@@ -6,7 +6,8 @@
  "engine": "InnoDB",
  "field_order": [
   "loan_period",
-  "max_transaction"
+  "max_transaction",
+  "max_articles_per_person"
  ],
  "fields": [
   {
@@ -18,13 +19,18 @@
    "fieldname": "max_transaction",
    "fieldtype": "Int",
    "label": "Maximum Number of Transactions"
+  },
+  {
+   "fieldname": "max_articles_per_person",
+   "fieldtype": "Int",
+   "label": "Max articles per person"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2026-01-29 02:31:04.113748",
+ "modified": "2026-01-31 19:16:26.298780",
  "modified_by": "Administrator",
  "module": "Library Management System",
  "name": "Library Settings",

@@ -2,11 +2,8 @@
 # For license information, please see license.txt
 
 # import frappe
-import frappe
 from frappe.model.document import Document
 
 
-class Penalty(Document):
-	def on_submit(self):
-		if self.paid==0:
-			frappe.throw("Payment incomplete. Ensure the payment is marked as paid.")
+class IssuedArticles(Document):
+	pass

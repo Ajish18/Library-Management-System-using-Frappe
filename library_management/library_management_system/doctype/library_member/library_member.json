@@ -13,8 +13,10 @@
   "phone",
   "column_break_xest",
   "active",
-  "books_issued",
-  "issued_count"
+  "article_issued",
+  "issued_count",
+  "section_break_cagh",
+  "articles_issued"
  ],
  "fields": [
   {
@@ -59,21 +61,32 @@
    "fieldtype": "Column Break"
   },
   {
-   "default": "0",
-   "fieldname": "books_issued",
-   "fieldtype": "Check",
-   "label": "Books Issued"
-  },
-  {
    "fieldname": "issued_count",
    "fieldtype": "Int",
    "label": "No. of Books in Issue"
+  },
+  {
+   "fieldname": "section_break_cagh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "articles_issued",
+   "fieldtype": "Table",
+   "label": "Articles Issued",
+   "options": "Issued Articles",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "article_issued",
+   "fieldtype": "Check",
+   "label": "Books Issued"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-29 13:05:22.843900",
+ "modified": "2026-01-31 19:48:09.967297",
  "modified_by": "Administrator",
  "module": "Library Management System",
  "name": "Library Member",

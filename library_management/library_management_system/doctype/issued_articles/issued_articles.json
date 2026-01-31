@@ -1,0 +1,41 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-31 15:50:59.925576",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "article_issued",
+  "transaction_reference"
+ ],
+ "fields": [
+  {
+   "fieldname": "article_issued",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Article Issued"
+  },
+  {
+   "fieldname": "transaction_reference",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Transaction Reference"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-01-31 19:19:49.655245",
+ "modified_by": "Administrator",
+ "module": "Library Management System",
+ "name": "Issued Articles",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
